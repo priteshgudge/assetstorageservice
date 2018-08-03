@@ -36,6 +36,9 @@ class AssetDoc():
 
     def get_id(self):
         return self.uuid
+
+    def get_status(self):
+        return self.status
     def get_db_dict(self):
         '''
         Returns Structure to store in DB

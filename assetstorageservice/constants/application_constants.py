@@ -1,2 +1,3 @@
 EMPTY_STRING = ""
 API_KEY = "API_KEY_8837291"
+DEFAULT_GET_TIMEOUT = 60 # Default Download URL timeout

@@ -18,9 +18,9 @@ class S3Client():
 
         return presigned_url
 
-    def generate_presigned_get_url(self,object_key):
+    def generate_presigned_get_url(self,object_key,timeout=3600):
         s3_client = self.get_s3_client()
         presigned_url = s3_client.generate_presigned_url('get_object', Params={'Bucket': s3_constants.S3_BUCKET, 'Key': object_key},
-                                                         ExpiresIn=3600, HttpMethod='GET')
+                                                         ExpiresIn=timeout, HttpMethod='GET')
 
         return presigned_url

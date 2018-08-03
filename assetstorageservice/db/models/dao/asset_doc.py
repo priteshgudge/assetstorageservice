@@ -14,11 +14,14 @@ class AssetDocDao():
         self.mongo_client = mongo_client
         self.db_read_func = mongo_client.read_from_db
         self.db_write_func = mongo_client.write_to_db
-
+        self.asset_doc = None
         if asset_doc_id:
             self.asset_doc = self.__get_doc_by_id(asset_doc_id)
         else:
             self.asset_doc = AssetDoc()
+
+    def get_asset_doc(self):
+        return self.asset_doc
 
     def __get_doc_by_id(self,asset_doc_id):
         '''
@@ -38,7 +41,7 @@ class AssetDocDao():
         current_date = get_utc_ms_time(default_date_now())
 
         if not self.asset_doc.get_id():
-            self.asset_doc.set_id(uuid.uuid4())
+            self.asset_doc.set_id(str(uuid.uuid4()))
             self.asset_doc.set_created_on(current_date)
 
         self.asset_doc.set_updated_on(current_date)
