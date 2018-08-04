@@ -7,9 +7,10 @@ import os
 
 class S3Client():
     def get_s3_client(self):
-        AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
-        AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
-        return boto3.client('s3',s3_constants.REGION,aws_access_key_id=AWS_ACCESS_KEY,aws_secret_access_key=AWS_SECRET_KEY)
+        #AWS_ACCESS_KEY = os.getenv("AWS_ACCESS_KEY_ID")
+        #AWS_SECRET_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+        #return boto3.client('s3',s3_constants.REGION,aws_access_key_id=AWS_ACCESS_KEY,aws_secret_access_key=AWS_SECRET_KEY)
+        return boto3.client('s3',s3_constants.REGION)
 
     def generate_presigned_put_url(self,object_key):
         s3_client = self.get_s3_client()
