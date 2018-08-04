@@ -10,7 +10,7 @@ Steps to Run:
 4. Go to project directory: Run Below Export Command:
 $export AWS_ACCESS_KEY_ID="<AWS_ACCESS_KEY_ID>";export AWS_SECRET_ACCESS_KEY="<AWS_SECRET_ACCESS_KEY>";export PYTHONPATH=$PWD
 
-5. python assetstorageservice/conf/service_app.py
+5. Run service app: $python assetstorageservice/conf/service_app.py
 
 6. Use the PostMan Collections to hit the APIs
 
