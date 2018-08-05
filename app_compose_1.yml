@@ -5,8 +5,8 @@ services:
      ports:
      - "7500:7500"
      environment:
-     - AWS_ACCESS_KEY_ID=AKIAJUZP62CNW6RDUIWQ
-     - AWS_SECRET_ACCESS_KEY=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
+     - AWS_ACCESS_KEY_ID=<AWS_ACCESS_KEY>
+     - AWS_SECRET_ACCESS_KEY=<AWS_ACCESS_SECRET_KEY>
      - MONGO_URI=mongodb://mongodb1:27017
      depends_on:
      - mongodb1
