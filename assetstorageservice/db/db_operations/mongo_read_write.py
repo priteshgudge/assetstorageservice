@@ -36,6 +36,9 @@ def write_document_to_db(collection_cursor,doc_id,document):
 
 
 class MongoReadWriteClient():
+    '''
+    Read Write Client for Mongo to make access db independent
+    '''
     def __init__(self,MONGO_URI):
         logger.info("MONGO URI: {}".format(MONGO_URI))
         client = pymongo.MongoClient(MONGO_URI)

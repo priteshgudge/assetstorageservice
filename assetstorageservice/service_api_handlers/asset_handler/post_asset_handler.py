@@ -3,6 +3,11 @@ from assetstorageservice.constants import status_constants
 from assetstorageservice.utils.s3_connection import S3Client
 
 def handle_post_request(remote_addr):
+    '''
+    Creating an Asset entry for upload
+    :param remote_addr:
+    :return:
+    '''
     asset_doc_dao = AssetDocDao()
     asset_doc = asset_doc_dao.get_asset_doc()
 

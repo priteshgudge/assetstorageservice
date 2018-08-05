@@ -6,6 +6,7 @@ from flask_restful import Api
 from assetstorageservice.service_apis.ping import Ping
 from assetstorageservice.service_apis.asset import Asset
 
+# Setting Up App
 app = Flask("AssetStorage")
 CORS(app)
 # Session
@@ -15,6 +16,7 @@ api = Api(app, prefix='/assetstorage/')
 
 app.logger.info("Setting up Resources")
 
+# Setting Up API Resources
 api.add_resource(Ping, 'ping/')
 api.add_resource(Asset, 'asset/<string:asset_id>/', 'asset/')
 

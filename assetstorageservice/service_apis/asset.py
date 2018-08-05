@@ -10,8 +10,16 @@ from assetstorageservice.service_api_handlers.asset_handler import (patch_asset_
 logger = get_logger()
 
 class Asset(Resource):
+    '''
+    Interface for Asset Entry Creation, Updation and Download Link Generation
+    '''
     @ErrorHandler("Asset GET", app)
     def get(self, asset_id=None):
+        '''
+        Generates the Presigned URL for File Download from S3
+        :param asset_id:
+        :return:
+        '''
         logger.info("Received Asset Get request from {}".format(request.remote_addr))
 
         request_data = request.args.to_dict()
@@ -26,6 +34,10 @@ class Asset(Resource):
 
     @ErrorHandler("Asset POST", app)
     def post(self):
+        '''
+        Generates Presigned URL for file upload
+        :return:
+        '''
         logger.info("Received Asset Creation request from {}".format(request.remote_addr))
 
         response = post_asset_handler.handle_post_request(request.remote_addr)
@@ -47,6 +59,11 @@ class Asset(Resource):
 
     @ErrorHandler("Asset PATCH", app)
     def patch(self, asset_id):
+        '''
+        API to mark asset as Uploaded
+        :param asset_id:
+        :return:
+        '''
         logger.info("Received Asset update request from {}".format(request.remote_addr))
 
         request_data = request.get_json(force=True)

@@ -4,6 +4,13 @@ from assetstorageservice.utils.exceptions import custom_error
 
 
 def handle_patch_request(asset_id, request_data,remote_addr):
+    '''
+    Handler to mark asset as uploaded
+    :param asset_id:
+    :param request_data:
+    :param remote_addr:
+    :return:
+    '''
     if not request_data.get('status') or request_data['status'] != "uploaded":
         raise custom_error.CustomError(400, "Bad Request")
 

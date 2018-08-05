@@ -5,7 +5,12 @@ from assetstorageservice.constants import status_constants
 from assetstorageservice.utils.exceptions.custom_error import CustomError
 
 def handle_get_request(asset_id,request_data):
-
+    '''
+    Asset Handler for Getting Assets
+    :param asset_id:
+    :param request_data:
+    :return:
+    '''
     timeout = request_data.get('timeout')
     if timeout:
         timeout_int = int(timeout)
