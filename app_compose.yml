@@ -1,0 +1,20 @@
+version: "2"
+services:
+  web:
+     image: priteshgudge/asset-upload:v1
+     ports:
+     - "7500:7500"
+     environment:
+     - AWS_ACCESS_KEY_ID=AKIAJUZP62CNW6RDUIWQ
+     - AWS_SECRET_ACCESS_KEY=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
+     - MONGO_URI=mongodb://mongodb1:27017
+     depends_on:
+     - mongodb1
+  mongodb1:
+    image: mongo
+    ports:
+    - "27017:27017"
+    volumes:
+    - data-volume:/data/db
+volumes:
+  data-volume:
