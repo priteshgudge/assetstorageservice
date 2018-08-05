@@ -1,4 +1,5 @@
 # assetstorageservice
+This service provides an interface to S3 for anonymous upload/download of assets.
 
 ## UnitTests
 Setup Virual Env and Install requirements as given in Method 2 below:
@@ -40,3 +41,6 @@ https://www.getpostman.com/collections/29e71952fd3e4a434c46
 8. Use the sample Curl command to Upload the file: curl -v -XPUT -T /path/to/sample_file.txt 'https://s3urlprovidedbyservice' 
 
 Eg. curl -v -XPUT -T /tmp/go-code-check 'https://s3urlprovidedbyservice'
+
+### References:
+https://medium.com/backticks-tildes/restful-api-design-put-vs-patch-4a061aa3ed0b
