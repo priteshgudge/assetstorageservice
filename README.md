@@ -18,7 +18,7 @@ Use the provided docker compose file and run the command:
 
 
 ### Method 2
-1. Clone the repository: https://github.com/priteshgudge/assetstorageservice.git
+1. Clone the repository: https://github.com/priteshgudge/assetstorageservice.git and install/run mongo 3.6
  
 2. Setup Virtual Environment: $virtualenv python3asststr -p python3.4 $source python3asststr/bin/activate
 
