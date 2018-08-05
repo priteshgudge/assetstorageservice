@@ -1,6 +1,16 @@
 # assetstorageservice
 
 ## Steps to Run:
+### Method 1
+Use the provided docker compose file and run the command:
+
+1. docker-compose -f app_compose.yml up
+
+2. Use Postman Collection for APIs: https://www.getpostman.com/collections/29e71952fd3e4a434c46
+
+3. For File Upload: curl -v -XPUT -T /path/to/file 'https://url-provided-by-post'
+
+### Method 2
 1. Clone the repository: https://github.com/priteshgudge/assetstorageservice.git
  
 2. Setup Virtual Environment: $virtualenv python3asststr -p python3.4 $source python3asststr/bin/activate
