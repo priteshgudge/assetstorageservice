@@ -1,7 +1,25 @@
 # assetstorageservice
+This service provides an interface to S3 for anonymous upload/download of assets.
+
+## UnitTests
+Setup Virual Env and Install requirements as given in Method 2 below:
+
+python -m unittest /assetstorageservice/tests/test_asset_dao.py
+
 
 ## Steps to Run:
-1. Clone the repository: https://github.com/priteshgudge/assetstorageservice.git
+### Method 1
+Use the provided docker compose file and run the command:
+
+1. docker-compose -f app_compose.yml up
+
+2. Use Postman Collection for APIs: https://www.getpostman.com/collections/29e71952fd3e4a434c46
+
+3. For File Upload: curl -v -XPUT -T /path/to/file 'https://url-provided-by-post'
+
+
+### Method 2
+1. Clone the repository: https://github.com/priteshgudge/assetstorageservice.git and install/run mongo 3.6
  
 2. Setup Virtual Environment: $virtualenv python3asststr -p python3.4 $source python3asststr/bin/activate
 
@@ -20,9 +38,9 @@ $export AWS_ACCESS_KEY_ID="<AWS_ACCESS_KEY_ID>";export AWS_SECRET_ACCESS_KEY="<A
 Postman Collection:
 https://www.getpostman.com/collections/29e71952fd3e4a434c46 
 
-8. Use the sample Curl command to Upload the file: curl -v -XPUT -T /path/to/sample_file.txt 'https://priteshassetstemp.s3.amazonaws.com/a3e6cabb-f068-4272-9876-aa3a2687682a?AWSAccessKeyId=AKIAJ-------------------------------------w%3D' 
+8. Use the sample Curl command to Upload the file: curl -v -XPUT -T /path/to/sample_file.txt 'https://s3urlprovidedbyservice' 
 
-Eg. curl -v -XPUT -T /tmp/go-code-check 'https://priteshassetstemp.s3.amazonaws.com/b3618bae-a159-4766-8d1e-b862f5993a60?AWSAccessKeyId=AKIAJUZP62CNW6RDUIWQ&Expires=1533346979&Signature=6NKEVHYgIPk%2F3vKmHDq%2BWAxXJKE%3D'
+Eg. curl -v -XPUT -T /tmp/go-code-check 'https://s3urlprovidedbyservice'
 
-## UnitTests
-python -m unittest /home/pritesh/codes/assignment/assetstorageservice/assetstorageservice/tests/test_asset_dao.py
+### References:
+https://medium.com/backticks-tildes/restful-api-design-put-vs-patch-4a061aa3ed0b
