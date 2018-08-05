@@ -1,6 +1,6 @@
 # assetstorageservice
 
-Steps to Run:
+## Steps to Run:
 1. Clone the repository: https://github.com/priteshgudge/assetstorageservice.git
  
 2. Setup Virtual Environment: $virtualenv python3asststr -p python3.4 $source python3asststr/bin/activate
@@ -24,3 +24,5 @@ https://www.getpostman.com/collections/29e71952fd3e4a434c46
 
 Eg. curl -v -XPUT -T /tmp/go-code-check 'https://priteshassetstemp.s3.amazonaws.com/b3618bae-a159-4766-8d1e-b862f5993a60?AWSAccessKeyId=AKIAJUZP62CNW6RDUIWQ&Expires=1533346979&Signature=6NKEVHYgIPk%2F3vKmHDq%2BWAxXJKE%3D'
 
+## UnitTests
+python -m unittest /home/pritesh/codes/assignment/assetstorageservice/assetstorageservice/tests/test_asset_dao.py
