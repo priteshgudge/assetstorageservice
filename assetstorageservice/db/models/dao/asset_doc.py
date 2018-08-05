@@ -7,6 +7,7 @@ from assetstorageservice.db.db_operations.mongo_read_write import MongoReadWrite
 from assetstorageservice.utils.utility_functions import default_date_now
 from assetstorageservice.utils.utility_functions import get_utc_ms_time
 from assetstorageservice.constants import status_constants
+from assetstorageservice.utils.exceptions.custom_error import CustomError
 
 class AssetDocDao():
 
@@ -16,7 +17,9 @@ class AssetDocDao():
         self.db_write_func = mongo_client.write_to_db
         self.asset_doc = None
         if asset_doc_id:
+
             self.asset_doc = self.__get_doc_by_id(asset_doc_id)
+
         else:
             self.asset_doc = AssetDoc()
 
@@ -29,6 +32,8 @@ class AssetDocDao():
         :return: AssetDoc
         '''
         document = self.db_read_func(asset_doc_id)
+        if not document:
+            raise CustomError(404, "Asset Not Found")
         asset_doc = AssetDoc()
         asset_doc.initialize_from_db_dict(document)
         return asset_doc
