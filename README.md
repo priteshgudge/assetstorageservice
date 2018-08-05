@@ -40,5 +40,3 @@ https://www.getpostman.com/collections/29e71952fd3e4a434c46
 8. Use the sample Curl command to Upload the file: curl -v -XPUT -T /path/to/sample_file.txt 'https://s3urlprovidedbyservice' 
 
 Eg. curl -v -XPUT -T /tmp/go-code-check 'https://s3urlprovidedbyservice'
-## UnitTests
-python -m unittest /home/pritesh/codes/assignment/assetstorageservice/assetstorageservice/tests/test_asset_dao.py
