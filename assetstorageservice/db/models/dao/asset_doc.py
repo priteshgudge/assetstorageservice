@@ -6,7 +6,7 @@ from assetstorageservice.db.config.db_configs import MONGO_URI
 from assetstorageservice.db.db_operations.mongo_read_write import MongoReadWriteClient
 from assetstorageservice.utils.utility_functions import default_date_now
 from assetstorageservice.utils.utility_functions import get_utc_ms_time
-from assetstorageservice.constants import status
+from assetstorageservice.constants import status_constants
 
 class AssetDocDao():
 
@@ -52,11 +52,11 @@ class AssetDocDao():
 
     def update_upload_url(self,upload_url):
         self.asset_doc.set_upload_url(upload_url)
-        self.asset_doc.set_status(status.CREATED)
+        self.asset_doc.set_status(status_constants.CREATED)
         self.create_or_update_asset_doc()
 
     def update_status_uploaded(self):
-        self.asset_doc.set_status(status.UPLOADED)
+        self.asset_doc.set_status(status_constants.UPLOADED)
         self.create_or_update_asset_doc()
 
 

@@ -1,5 +1,6 @@
 import pymongo
-
+import logging
+logger = logging
 
 def read_document_from_db(collection_cursor,doc_id):
     '''
@@ -36,6 +37,7 @@ def write_document_to_db(collection_cursor,doc_id,document):
 
 class MongoReadWriteClient():
     def __init__(self,MONGO_URI):
+        logger.info("MONGO URI: {}".format(MONGO_URI))
         client = pymongo.MongoClient(MONGO_URI)
         self.cursor = client.assets.assetdocs
 

@@ -39,6 +39,10 @@ class AssetDoc():
 
     def get_status(self):
         return self.status
+
+    def get_upload_url(self):
+        return self.upload_url
+
     def get_db_dict(self):
         '''
         Returns Structure to store in DB

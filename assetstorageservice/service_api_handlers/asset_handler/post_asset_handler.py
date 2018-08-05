@@ -1,5 +1,5 @@
 from assetstorageservice.db.models.dao.asset_doc import AssetDocDao
-from assetstorageservice.constants import status
+from assetstorageservice.constants import status_constants
 from assetstorageservice.utils.s3_connection import S3Client
 
 def handle_post_request(remote_addr):
@@ -7,7 +7,7 @@ def handle_post_request(remote_addr):
     asset_doc = asset_doc_dao.get_asset_doc()
 
     # Initial Update to Asset Doc to keep track of request
-    asset_doc.set_status(status.CREATED)
+    asset_doc.set_status(status_constants.CREATED)
     asset_doc.set_request_ip(remote_addr)
     asset_doc_dao.create_or_update_asset_doc()
 

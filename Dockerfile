@@ -1,19 +1,19 @@
-FROM ubuntu:16.04
+FROM ubuntu:14.04
 
 RUN apt-get update -y
 RUN apt-get install -y python3-pip python3-dev build-essential
 
-COPY . /root/assetstorageservice
+#ADD requirements.txt /app
+COPY .  /app
 
-WORKDIR /root/assetstorageservice
+WORKDIR /app
+ENV HOME /app
+RUN pip3 install -r requirements.txt
 
-CMD [ "pip install", "-r", "./assetstorageservice/conf/requirements.txt"]
-
-#ENV ENV_PATH=/root
 ENV ENVIRONMENT=development
-ENV PYTHONPATH=/root/assetstorageservice
+ENV PYTHONPATH=/app/
 
 EXPOSE 7500
 
-ENTRYPOINT ["./assetstorageservice/conf/entrypoint.sh"]
+ENTRYPOINT [ "assetstorageservice/conf/entrypoint.sh"]
 #CMD [ "python","./assetstorageservice/conf/service_app.py" ]
