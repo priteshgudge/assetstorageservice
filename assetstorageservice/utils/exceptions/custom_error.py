@@ -1,5 +1,5 @@
 class CustomError(Exception):
-    """Base class for Agrostar exceptions"""
+    """Base class for exceptions"""
 
     def __init__(self, error_code, msg, *args, **kwargs):
         self.error_code = error_code
