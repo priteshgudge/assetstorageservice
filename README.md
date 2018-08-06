@@ -1,5 +1,5 @@
 # assetstorageservice
-This service provides an interface to S3 for anonymous upload/download of assets.
+This service provides an interface to S3 for worry-free uuid-based upload/download of assets.
 
 ## UnitTests
 Setup Virual Env and Install requirements as given in Method 2 below:
