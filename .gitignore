@@ -1,5 +1,5 @@
-
-nche__/
+led / optimized / DLL files
+__pycache__/
 *.py[cod]
 *$py.class
 tmp
@@ -73,4 +73,9 @@ target/
 .idea/*
 
 *.swm
-.ropeproject/eotime==1.0.0
+.ropeproject/
+ordermanagement/.ropeproject/
+
+#flask-profiler
+flask_profiler.sql
+
