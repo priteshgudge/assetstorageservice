@@ -1,3 +1,4 @@
+Circle CI Build: [![CircleCI](https://circleci.com/gh/priteshgudge/assetstorageservice.svg?style=svg)](https://circleci.com/gh/priteshgudge/assetstorageservice)
 # assetstorageservice
 This service provides an interface to S3 for worry-free uuid-based upload/download of assets.
 
