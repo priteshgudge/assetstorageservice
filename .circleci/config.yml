@@ -48,7 +48,7 @@ jobs:
           name: run tests
           command: |
             . venv/bin/activate
-            python manage.py test
+            nosetests -v assetstorageservice/tests/test_asset_dao.py
 
       - store_artifacts:
           path: test-reports
