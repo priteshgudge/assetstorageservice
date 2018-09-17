@@ -1,4 +1,5 @@
 Circle CI Build: [![CircleCI](https://circleci.com/gh/priteshgudge/assetstorageservice.svg?style=svg)](https://circleci.com/gh/priteshgudge/assetstorageservice)
+Travis CI: [![Build Status](https://travis-ci.org/priteshgudge/assetstorageservice.svg?branch=master)](https://travis-ci.org/priteshgudge/assetstorageservice)
 # assetstorageservice
 This service provides an interface to S3 for worry-free uuid-based upload/download of assets.
 
