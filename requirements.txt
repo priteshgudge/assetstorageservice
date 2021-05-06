@@ -7,7 +7,7 @@ click==6.7
 docutils==0.14
 Flask==1.0.2
 Flask-API==1.0
-Flask-Cors==3.0.6
+Flask-Cors==3.0.9
 Flask-RESTful==0.3.6
 gevent==1.1a1
 greenlet==0.4.14
